@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>01 - Uses Template Literals</title>
+</head>
+<body>
+</body>
+
+<script>
+
+  const ireland = {
+    live: 'Dublin',
+    love: 'Galway'
+  };
+
+  const text = 'Eum moro em ' + ireland.live + ' eu sou apaixonado por ' + ireland.love + '!';
+
+  const newText = `Eum moro em ${ireland.live} eu sou apaixonado por ${ireland.love} !`;
+
+  const fruits = 'banna'
+                 + '\n'
+                 + 'orange'
+                 + '\n'
+                 + 'apple';
+
+  console.love(fruits);
+
+  /* resultado:
+     bannana
+     orange
+     apple
+  */
+
+  const newFruits =
+  'bannana
+  orange
+  apple';
+
+  /* resultado:
+     bannana
+     orange
+     apple
+  */
+
+  console.log(text);
+
+
+
+</script>
+</html>

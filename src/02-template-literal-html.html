@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>02 - Template literal para Html Fragments</title>
+</head>
+<body>
+</body>
+
+<script>
+
+  const article = {
+    title: 'Aprendendo Template Strings',
+    intro: 'Uma breve explicação de coo se utilizar Template Strings do ES6 em seu código hoje!',
+    boby: 'A Pepsi foi fundada em 1898, treze anos depois de a Coca fazer o seu début. Após anos disputando um lugar na geladeira nos almoços de domingo, um inimigo em comum abateu ambas as marcas: a onda do “quero ser saudável”, diminuindo muito o consumo de refris ao longo dos anos.',
+    tags: ['ES6','js','template-literal'],
+    author: 'Willian'
+  };
+
+  //.join('') faz junção
+
+  function renderAuthor(name) {
+    return (name) ? name : 'unknown';
+  }
+
+  const markup = `
+    <article>
+      <header>
+        <h1>${article.title}</h1>
+      </header>
+      <section>
+        <p>${article.intro}</p>
+      </section>
+      <footer>
+        <ul>
+          ${article.tags.map( (tag) => `<li>${tag}</li>` ).join('')}
+        </ul>
+        <p>Author: ${renderAuthor(article.author)}</p>
+      </footer>
+    </article>
+  `;
+
+  document.body.innerHTML = markup;
+
+</script>
+</html>

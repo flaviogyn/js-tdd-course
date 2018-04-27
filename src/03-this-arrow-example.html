@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>03 - This no arrow function</title>
+</head>
+<body>
+
+  <button id="btn">Make my sandwich!</button>
+
+</body>
+
+<script>
+  const sandwich = {
+    bread: 'white',
+    cheese: 'cheddar',
+
+    prepare: function() {
+      return `I want a sandwich with ${this.bread} bread and ${this.cheese} `
+    },
+
+    make: function() {
+      var that = this;
+      window.setTimeout(function() {
+        console.log( that.prepare() );
+      }, 500);
+    }
+
+    /* retorna prepare mas é ganbiarra */
+
+    make: function() {
+      window.setTimeout(function() {
+        console.log( this );
+      }, 500);
+    }
+
+    /* retorna objeto window */
+
+    make: function() {
+      window.setTimeout(() => {
+        console.log( this.prepare() );
+      }, 500);
+    }
+
+    /* retorna prepare pois o arrow function retorna o contexto de onde ele tá */
+
+  };
+
+  const btn = document.getElementById('btn');
+
+  btn.addEventListener('click', function(){
+    sandwich.make();
+  });
+
+
+</script>
+</html>

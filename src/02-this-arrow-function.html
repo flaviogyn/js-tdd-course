@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>02 - This no arrow function</title>
+</head>
+<body>
+
+  <button id="btn">Click Me!</button>
+
+</body>
+
+<script>
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', function(){
+    console.log();
+  });
+
+  /* resultado:
+     <button id="btn">Click Me!</button>
+  */
+
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', () => {
+    console.log();
+  });
+
+  /* resultado: pega todo o contexto
+     window {...
+     CacheStorage, webkitStorage...}
+  */
+
+</script>
+</html>
