@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>02 - Default Parameters</title>
+</head>
+<body>
+</body>
+
+<script>
+  //metodo antigo de receber variaveis vazias
+  function hello (name, surname) {
+    name = name || 'Willian';
+    surname = surname || 'Justen';
+
+    console.log(`Hello ${name} ${surname}! How are you?`)
+  }
+
+  //metodo novo default parameters
+  function hello (name = 'Willian', surname = 'Justen') {
+    console.log(`Hello ${name} ${surname}! How are you?`)
+  }
+
+  hello();
+
+  hello('Jonas', 'Mendes');
+
+  hello('Jonas');
+
+
+</script>
+</html>
