@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Spread Operator Intro</title>
+</head>
+<body>
+</body>
+
+<script>
+    let front = ['react','vue','angular'];
+    let back = ['python','ruby','nodejs'];
+
+    /* método antigo 
+        let fullStack = front.concat(back);
+        console.log(fullStack); //Junta os dois arrays
+    
+        let fullStack = [];
+        fullStack = fullStack.concat(front);
+        fullStack.push('RxJS');
+        fullStack = fullStack.concat(back);
+        console.log(fullStack); //Junta os dois arrays e o RxJs no meio
+    */
+
+    let fullStack = [...front, 'RxJs', ...back];
+    //concatena em um unico array
+
+    console.log([...'will']);   //["w","i","l","l"]
+    console.log(...front);      //react vue angular
+</script>
+</html>
