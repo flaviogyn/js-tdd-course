@@ -21,8 +21,9 @@
     //     .then(responses => {
     //         console.log(responses);
     //     })
-    
+
     // resolveu a primeira já responde o resto não importa
+    // acho q pode usar uma consulta falhar e manda outra
     Promise
         .race([currency, countries])
         .then(responses => {
