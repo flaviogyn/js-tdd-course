@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Symbols Intro</title>
+</head>
+<body>
+</body>
+
+<script>
+    // Ele cria uma prop. unica para cada symbol
+    //http://cangaceirojavascript.com.br/symbol-exemplo-uso-javascript/
+    
+    let foo = Symbol('name');
+    let bar = Symbol('name');
+    // console.log(foo == bar);
+    // não são iguais
+    
+    let obj = {
+        [Symbol('name')]: 'Willian',
+        [Symbol('age')]: 26,
+        city: 'Dublin'
+    };
+    
+    const symbols = Object.getOwnPropertySymbols(obj);
+    const data = symbols.map(sym => obj[sym]);
+    console.log(data);
+</script>
+</html>

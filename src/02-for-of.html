@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>02 - for...of</title>
+</head>
+<body>
+</body>
+
+<script>
+    // iterators
+    // iterable
+    
+    var txt = 'Ireland'; // iterable
+    var it = txt[Symbol.iterator](); // iterator
+
+    // console.log( it.next() ); Object {value: "I", done: flase}
+    // console.log( it.next() ); Object {value: "r", done: flase}
+    // console.log( it.next() ); Object {value: "e", done: flase}
+    // console.log( it.next() ); Object {value: "l", done: flase}
+    // console.log( it.next() ); Object {value: "a", done: flase}
+    // console.log( it.next() ); Object {value: "n", done: flase}
+    // console.log( it.next() ); Object {value: "d", done: flase}
+    // console.log( it.next() ); Object {value: "undefined", done: true}
+    
+    for ( letter of txt ) {
+        console.log(letter);
+        if (letter === 'a') break;
+    }
+</script>
+</html>
