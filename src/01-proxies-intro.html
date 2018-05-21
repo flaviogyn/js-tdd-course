@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Proxies Intro</title>
+</head>
+<body>
+</body>
+
+<script>
+
+    //proxy deternimar comportamentos diferentes dentro de um objeto
+    //validação de senha ou algo do tipo
+
+    let obj = {
+        name: 'Willian',
+        age: 26
+    };
+
+    let proxy = new Proxy(obj, {
+        get(target, name) {
+            console.log('Alguém está o pedindo o nome =D');
+            return target[name];
+        },
+        set(target, name, value) {
+            console.log('Alguém está mudando o nome!');
+            target[name] = value.toUpperCase();
+        }
+    });
+
+</script>
+</html>
